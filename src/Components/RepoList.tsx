@@ -1,7 +1,6 @@
 import React from "react";
 import { Repo, Repos } from "../types/types";
 import RepoItem from "./RepoItem";
-import Image from "next/image";
 
 interface Props {
   loading: boolean;
