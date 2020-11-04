@@ -13,7 +13,7 @@ const Index = (props: { repos: Repos }) => {
   const [repos, setRepos] = useState<Repos>(props.repos);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    const initial_repos = JSON.parse(window?.localStorage?.getItem("repos"));
+    const initial_repos = JSON.parse(window?.localStorage?.getItem("repos")!);
     if (initial_repos) {
       setRepos(initial_repos);
     }
