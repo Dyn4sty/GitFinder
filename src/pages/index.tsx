@@ -18,16 +18,20 @@ const Index = (props: { repos: Repos }) => {
       setRepos(initial_repos);
     }
   }, []);
-
+  // State Function
   const handleLanguageChange = (language: string) => {
     setLanguage(language);
   };
+
+  // State Function
   const handleSearchTextChange = (text: string) => {
     setSearchText(text);
     if (text) {
       loadRepos(text, language);
     }
   };
+
+  // State Function
   const loadRepos = async (searchText: string, language: string) => {
     setLoading(true);
     try {
@@ -39,17 +43,16 @@ const Index = (props: { repos: Repos }) => {
       console.log(err);
     }
   };
+
   return (
     <>
-      <Head>
-        <title>Home</title>
-      </Head>
       <div className="container	is-flex">
         <img
           src="/img/study.svg"
           alt="Picture of the author"
           className="mb-5 px-3 is-justify-content-center"
           width="500px"
+          height="auto"
           style={{ margin: "0 auto" }}
         />
       </div>

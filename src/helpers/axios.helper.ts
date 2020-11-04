@@ -26,9 +26,9 @@ export async function axiosGetCancellable(
   cancelConfig.request = axios.CancelToken.source();
   cancelConfig.cancelToken = cancelConfig.request.token;
   Object.assign(cancelConfig, config);
-  
+
   try {
-    const res = await axios.get(url, cancelConfig);
+    const res = await axios.get(url, cancelConfig as AxiosRequestConfig);
     return res;
   } catch (err) {
     if (err.message !== ERROR_MSG) {

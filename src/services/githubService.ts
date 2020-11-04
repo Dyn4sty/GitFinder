@@ -21,6 +21,6 @@ export function searchRepos(searchText: string, language?: string) {
   return axiosGetCancellable(`api/search?q=${query}&sort=stars&order=desc`);
 }
 
-function isServer() {
+export function isServer() {
   return typeof window === "undefined";
 }

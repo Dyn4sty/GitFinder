@@ -2,7 +2,8 @@ import React from "react";
 import { useRouter } from "next/router";
 import Transition from "../Transition";
 import "./Layout.module.scss";
-const Layout = ({ children }) => {
+
+const Layout: React.FC = ({ children }) => {
   const router = useRouter();
   return (
     <div
@@ -13,7 +14,6 @@ const Layout = ({ children }) => {
         minHeight: "100vh",
       }}
     >
-      {/* Header component that doesn't animate */}
       <Transition location={router.pathname}>
         <main className="main">{children}</main>
       </Transition>

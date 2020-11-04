@@ -1,18 +1,23 @@
 import Header from "../Components/Layout/Header";
 import type { AppProps } from "next/app";
 import "../scss/styles.scss";
-// import "react-bulma-components/dist/react-bulma-components.min.css";
 import Layout from "../Components/Layout/Layout";
+import Head from "next/head";
+import { FC } from "react";
+import { getTitle } from "../constants/routes.constants";
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+const MyApp: FC<AppProps> = ({ Component, pageProps, router }) => {
   return (
     <div>
+      <Head>
+        <title>{getTitle(router.pathname)}</title>
+      </Head>
       <Header></Header>
       <Layout>
-        <Component {...pageProps} key={router.route} />
+        <Component {...pageProps} key={router.route} path={router.pathname} />
       </Layout>
     </div>
   );
-}
+};
 
 export default MyApp;

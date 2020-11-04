@@ -9,11 +9,15 @@ export type Repo = {
   owner: {
     avatar_url?: string;
     login: string;
+    html_url: string;
   };
 };
 
 export type RoutesConfig = Route[];
 export type Route = {
   path: string;
+  htmltitle: () => string;
   title: string;
 };
+
+export type Options = { value?: string; label?: string }[];

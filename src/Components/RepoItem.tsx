@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import { Repo } from "../types/types";
 
@@ -26,7 +25,10 @@ const RepoItem = ({ repo }: RepoItemProps) => {
               repo.owner.avatar_url ||
               "https://bulma.io/images/placeholders/1280x960.png"
             }
-            alt="Placeholder image"
+            alt="Github Repo image"
+            loading="lazy"
+            width="1280"
+            height="960"
           />
         </figure>
       </div>
@@ -40,7 +42,9 @@ const RepoItem = ({ repo }: RepoItemProps) => {
                   "https://bulma.io/images/placeholders/96x96.png"
                 }
                 loading="lazy"
-                alt="Placeholder image"
+                alt="Github Repo image"
+                width="96"
+                height="96"
               />
             </figure>
           </div>
@@ -53,7 +57,11 @@ const RepoItem = ({ repo }: RepoItemProps) => {
               {repo.name}
             </a>
             <br />
-            <a className="subtitle is-6 has-text-primary">
+            <a
+              className="subtitle is-6 has-text-primary"
+              target="_blank"
+              href={repo.owner.html_url}
+            >
               {capitalizeFirstLetter(repo.owner.login)}
             </a>
           </div>

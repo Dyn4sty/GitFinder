@@ -1,6 +1,5 @@
 import React from "react";
-import Select, { Options } from "./shared/select";
-import TextInput from "./shared/text-input";
+import { Options } from "../types/types";
 import LANGUAGES from "../constants/languages.constant";
 import { Form } from "react-bulma-components";
 

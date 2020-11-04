@@ -1,4 +1,4 @@
-import { Options } from "../Components/shared/select";
+import { Options } from '../types/types';
 
 const LANGUAGES: Options = [
   { value: "csharp#", label: "C#" },

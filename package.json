@@ -9,6 +9,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@types/react-transition-group": "^4.4.0",
     "axios": "^0.21.0",
     "next": "^10.0.0",
     "node-sass": "^4.14.1",

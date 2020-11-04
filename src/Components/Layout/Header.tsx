@@ -18,7 +18,7 @@ const Header = (): JSX.Element => {
       >
         <Navbar.Brand>
           <Link href="/">
-            <Navbar.Item>GitHub Finder 📦</Navbar.Item>
+            <Navbar.Item>GitFinder 📦</Navbar.Item>
           </Link>
           <Navbar.Burger onClick={() => setActive(!active)} />
         </Navbar.Brand>

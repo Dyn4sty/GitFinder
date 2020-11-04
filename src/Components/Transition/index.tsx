@@ -2,7 +2,10 @@ import {
   TransitionGroup,
   Transition as ReactTransition,
 } from "react-transition-group";
-
+interface Props {
+  location: string;
+  children: any;
+}
 type TransitionStyle = {
   position?: string;
   opacity?: number;
@@ -13,6 +16,8 @@ interface ITransitionStyles {
   entering: TransitionStyle;
   entered: TransitionStyle;
   exiting: TransitionStyle;
+  exited?: string;
+  unmounted?: string;
 }
 
 const TIMEOUT = 200;
@@ -33,7 +38,7 @@ const getTransitionStyles: ITransitionStyles = {
     transform: `translateX(-50px)`,
   },
 };
-const Transition = ({ children, location }) => {
+const Transition = ({ children, location }: Props) => {
   return (
     <TransitionGroup style={{ position: "relative" }}>
       <ReactTransition
@@ -46,7 +51,7 @@ const Transition = ({ children, location }) => {
         {(status) => (
           <div
             style={{
-              ...getTransitionStyles[status],
+              ...(getTransitionStyles[status] as {}),
             }}
           >
             {children}
